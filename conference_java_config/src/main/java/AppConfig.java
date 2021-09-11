@@ -15,8 +15,12 @@ public class AppConfig {
     //will be created.
     @Bean(name="speakerService")
     public SpeakerService getSpeakerService(){
-        SpeakerServiceImpl speakerServiceImpl = new SpeakerServiceImpl();
-        speakerServiceImpl.setSpeakerRepository(getSpeakerRepository());
+        // SETTER INJECTION
+//        SpeakerServiceImpl speakerServiceImpl = new SpeakerServiceImpl();
+//        speakerServiceImpl.setSpeakerRepository(getSpeakerRepository());
+
+        //CONSTRUCTOR INJECTION
+        SpeakerServiceImpl speakerServiceImpl = new SpeakerServiceImpl(getSpeakerRepository());
         return speakerServiceImpl;
     }
 
