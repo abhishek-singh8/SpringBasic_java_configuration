@@ -16,6 +16,12 @@ public class Application {
 
         //When we call the speakerService Bean it will inject the speakerRepository Bean in it as well.
         SpeakerService speakerService = applicationContext.getBean("speakerService",SpeakerService.class);
+        System.out.println(speakerService);
+
+        SpeakerService speakerService2 = applicationContext.getBean("speakerService",SpeakerService.class);
+        System.out.println(speakerService2);
+
+
         System.out.println(speakerService.findAll().get(0).getFirstName());
     }
 }
