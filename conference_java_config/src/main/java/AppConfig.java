@@ -16,7 +16,7 @@ public class AppConfig {
     // speakerRepository and bean is always singelton no matter how many times we call getSpeakerService and only one of speakerRepository
     //will be created.
     @Bean(name="speakerService")
-    @Scope(value = BeanDefinition.SCOPE_SINGLETON)
+    @Scope(value = BeanDefinition.SCOPE_PROTOTYPE)
     public SpeakerService getSpeakerService(){
         // SETTER INJECTION
 //        SpeakerServiceImpl speakerServiceImpl = new SpeakerServiceImpl();
