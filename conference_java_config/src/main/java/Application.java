@@ -7,12 +7,14 @@ public class Application {
 
     public static void main(String[] args){
 
-        //Below line is loading spring and loading our  configuration file into the application context. So when below line is executed
-        //then it will go to AppConfig and creates a registry with  our two Bean.
+      /*  Below line is loading spring and loading our configuration file into the application context.
+         So when below line is execute then it will go and create a basic registry with 2 beans in it .*/
         ApplicationContext applicationContext=new AnnotationConfigApplicationContext(AppConfig.class);
 
-        //Without spring
-        //  SpeakerService speakerService = new SpeakerServiceImpl();
+       /* Without spring
+
+          SpeakerService speakerService = new SpeakerServiceImpl();
+          */
 
         //When we call the speakerService Bean it will inject the speakerRepository Bean in it as well.
         SpeakerService speakerService = applicationContext.getBean("speakerService",SpeakerService.class);
